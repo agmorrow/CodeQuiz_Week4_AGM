@@ -76,6 +76,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row-reverse;
     padding: 0 30px;
     border-top: 1px solid lightgrey;
 }
