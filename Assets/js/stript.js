@@ -1,7 +1,7 @@
 //selecting all required elements
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
-const continue_btn = info_box.querySelector(".buttons .restart");
+const continue_btn = info_box.querySelector(".buttons .startQuiz");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
@@ -31,8 +31,8 @@ let widthValue = 0;
 const restart_quiz = result_box.querySelector(".buttons .startQuiz");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
-// if restartQuiz button clicked
-restart_quiz.onclick = ()=>{
+// if startQuiz button clicked
+start_quiz.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 60; 
@@ -173,14 +173,5 @@ function setTime() {
 
 
 
-function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
-    function timer(){
-        time += 1; //upgrading time value with 1
-        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 549){ //if time value is greater than 549
-            clearInterval(counterLine); //clear counterLine
-        }
-    }
-}
+
 

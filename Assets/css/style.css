@@ -351,12 +351,12 @@ footer button.show{
     transition: all 0.3s ease;
 }
 
-.buttons button.restart{
+.buttons button.startQuiz{
     color: #fff;
     background: linear-gradient(to right, #FF6B20, #E31D7E);
 }
 
-.buttons button.restart:hover{
+.buttons button.startQuiz:hover{
     background: linear-gradient(to right, #FF874A, #E84394);
 }
 
