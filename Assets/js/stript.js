@@ -5,9 +5,8 @@ const continue_btn = info_box.querySelector(".buttons .startQuiz");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
-const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
-const timeEl = document.querySelector(".timer .timer_sec");
+const timeEl = document.querySelector(".timer .countDown");
 
 
 // if continueQuiz button clicked
@@ -50,10 +49,22 @@ start_quiz.onclick = ()=>{
     next_btn.classList.remove("show"); //hide the next button
 }
 
-// if quitQuiz button clicked
-quit_quiz.onclick = ()=>{
-    window.location.reload(); //reload the current window
+const secondsLeft = 60;
+
+function setTime() {
+    const timerInterval = setInterval(function() {
+        secondsLeft--; //decrement the time value
+        timeEl.textContent = secondsLeft + "seconds left!";
+
+        if(secondsLeft == 0) { //if timer is less than 0
+            clearInterval(timerInterval); //clear counter
+            sendMessage();        
+        }
+    }, 1000);
 }
+
+
+
 
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
@@ -155,17 +166,7 @@ function showResult(){
     }
 }
 
-function setTime() {
-    const timerInterval = setInterval(function() {
-        secondsLeft--; //decrement the time value
-        timeEl.textContent = secondsLeft + "seconds left!";
 
-        if(secondsLeft == 0) { //if timer is less than 0
-            clearInterval(timerInterval); //clear counter
-            sendMessage();        
-        }
-    }, 1000);
-}
 
 
 
