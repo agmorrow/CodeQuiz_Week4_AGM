@@ -16,32 +16,13 @@ body{
 
 .info_box,
 .quiz_box,
-.result_box{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
-.result_box.activeResult{
-    opacity: 1;
-    z-index: 5;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-
-
 .info_box{
     width: 540px;
     background: #fff;
     border-radius: 5px;
-    transform: translate(-50%, -50%) scale(0.9);
-    
+    transform: translate(-50%, -50%) scale(0.9);   
 }
 
 .info_box .info-title{
@@ -173,11 +154,7 @@ section .que_text{
     font-size: 25px;
     font-weight: 600;
 }
-
-section .option_list{
-    padding: 20px 0px;
-    display: block;   
-}
+ 
 
 section .option_list .option{
     background: aliceblue;
@@ -202,9 +179,6 @@ section .option_list .option:hover{
     background: #cce5ff;
     border: 1px solid #b8daff;
 }
-
-
-
 
 section .option_list .option.disabled{
     pointer-events: none;
@@ -232,11 +206,6 @@ section .option_list .option .icon{
     background: #f8d7da;
     border-color: #a42834;
 }
-
-
-
-
-
 
 
 .buttons button.startQuiz{
