@@ -28,7 +28,7 @@ a:link {
     background-color: transparent;
     color: black;
 }
-.infoBox {
+.container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -44,7 +44,7 @@ a:link {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.infoBox, .quiz {
+.infoBox, .quizContainer {
     width: 540px;
     background: #fff;
     border-radius: 5px;
@@ -79,7 +79,7 @@ a:link {
     font-weight: 600;
     color: #007bff;
 }
-.buttons{
+#buttons{
     height: 60px;
     display: flex;
     align-items: center;
@@ -88,7 +88,7 @@ a:link {
     border-top: 1px solid lightgrey;
 }
 
-.infoBox .buttons button{
+.infoBox #buttons button{
     margin: 0 5px;
     height: 40px;
     width: 100px;
@@ -101,19 +101,18 @@ a:link {
     transition: all 0.3s ease;
 }
 
-.buttons button.startQuiz{
+#buttons button.startQuiz{
     color: #fff;
     background: linear-gradient(to right, #515ab1, #303ca7);
 }
-.buttons button.startQuiz:hover{
+#buttons button.startQuiz:hover{
     background: linear-gradient(to right,#6970af, #4750a5);
 }
 
-#questions {
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: block;
-    width: 700px;
-    margin: 10px auto 0px auto;
-    text-align: left;
+.hide {
+    display: none;
+}
+
+.btn-grid {
+    display: grid;
 }
