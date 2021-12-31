@@ -32,23 +32,37 @@ function startQuiz() {
 
 function setNextQuestion() {
    showQuestion(shuffleQuestions[currentQuestionIndex])
+   
 }
 
 function showQuestion(question) {
     questionsEl.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement ('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+    })
 }
 
-function selectAnswer(){
-
+function selectAnswer(e) {
+answerButtonsEl.appendChild(button)
 }
 
 const questions = [
         {
             question: "Who was the boss at the Dunder Mifflin Scranton branch?",
-            choices: ["David Wallace", "Michael Scarn", "Michael Scott", "Jan Levinson"],
-            answer: 3
+            answers: [
+                { text: "David Wallace", correct: false },
+                { text: "Michael Scarn", correct: false },
+                { text: "Michael Scott", correct: true },
+                { text: "Jan Levinson", correct: false }
+            ]
         }
-    ];
+    ]       
 
 
 

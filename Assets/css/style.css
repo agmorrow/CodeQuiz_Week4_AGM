@@ -38,16 +38,6 @@ a:link {
 }
 
 
-/* #infoBox, #question-container {
-    width: 540px;
-    background: #fff;
-    border-radius: 5px;
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-} */
-
 .infoTitle {
     height: 60px;
     width: 100%;
@@ -69,25 +59,27 @@ a:link {
     font-size: 17px;
 }
 
-.infoBox .infoList .info span{
-    font-weight: 600;
-    color: #007bff;
-}
-.buttons, #startQuiz {
+
+.buttons {
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 30px;
-    border-top: 1px solid lightgrey;
+    
 }
 
+#startQuiz {
+    height: 50px;
+    width: 100px;
+    margin: 0 30px 10px 0;
+    border-radius: 5px;
+}
 
-.buttons button#startQuiz{
+#startQuiz {
     color: #fff;
     background: linear-gradient(to right, #515ab1, #303ca7);
 }
-.buttons button#startQuiz:hover{
+#startQuiz:hover {
     background: linear-gradient(to right,#6970af, #4750a5);
 }
 
