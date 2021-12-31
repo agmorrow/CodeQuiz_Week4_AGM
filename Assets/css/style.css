@@ -37,14 +37,8 @@ a:link {
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.infoBox.activeInfo {
-    opacity: 1;
-    z-index: 5;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-}
 
-.infoBox, .quizContainer {
+/* #infoBox, #question-container {
     width: 540px;
     background: #fff;
     border-radius: 5px;
@@ -52,9 +46,9 @@ a:link {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-}
+} */
 
-.infoTitle{
+.infoTitle {
     height: 60px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
@@ -66,11 +60,11 @@ a:link {
     font-weight: 600;
 }
 
-.infoList{
+.infoList {
     padding: 15px 30px;
 }
 
-.info{
+.info {
     margin: 5px 0;
     font-size: 17px;
 }
@@ -79,7 +73,7 @@ a:link {
     font-weight: 600;
     color: #007bff;
 }
-#buttons{
+.buttons, #startQuiz {
     height: 60px;
     display: flex;
     align-items: center;
@@ -88,24 +82,12 @@ a:link {
     border-top: 1px solid lightgrey;
 }
 
-.infoBox #buttons button{
-    margin: 0 5px;
-    height: 40px;
-    width: 100px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
 
-#buttons button.startQuiz{
+.buttons button#startQuiz{
     color: #fff;
     background: linear-gradient(to right, #515ab1, #303ca7);
 }
-#buttons button.startQuiz:hover{
+.buttons button#startQuiz:hover{
     background: linear-gradient(to right,#6970af, #4750a5);
 }
 
@@ -116,3 +98,4 @@ a:link {
 .btn-grid {
     display: grid;
 }
+

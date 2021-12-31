@@ -1,4 +1,4 @@
-const info_box = document.querySelector(".infoBox");
+const info_box = document.getElementById("infoBox");
 const start_btn = document.getElementById("startQuiz");
 const questionContainerEl = document.getElementById('question-container');
 const questionsEl = document.getElementById("questions");
@@ -20,14 +20,14 @@ const questionsEl = document.getElementById("questions");
 
 
 
-document.getElementById('question-container').style.display = 'none';
 
+info_box.classList.remove('hide')
 start_btn.addEventListener('click', startQuiz)
 
 function startQuiz() {
-console.log('Started')
-info_box.style.display = 'none';
-questionContainerEl.classlist.remove('hide')
+    info_box.classList.add('hide')
+    questionContainerEl.classList.remove('hide')
+
 //     timer();
 //     questions1();
 }
