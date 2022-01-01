@@ -38,7 +38,7 @@ a:link {
 }
 
 
-.infoTitle {
+.infoTitle, #question {
     height: 60px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
@@ -89,5 +89,19 @@ a:link {
 
 .btn-grid {
     display: grid;
+}
+
+.btn {
+    color: #fff;
+    background: linear-gradient(to right, #515ab1, #303ca7);
+    border-radius: 5px;
+    margin: 8px 10px 8px 10px;
+    height: 30px;
+    width: auto;
+}
+
+.btn:hover {
+    color: #fff;
+    background: linear-gradient(to right,#6970af, #4750a5);
 }
 
