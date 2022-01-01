@@ -6,16 +6,6 @@ const answerButtonsEl = document.getElementById("answer-button");
 
 let shuffleQuestions, currentQuestionIndex
 
-// const timerEl = document.getElementById("timer");
-
-// let timeLeft = 75;
-// const stopTime = 0;
-// const subtractTime = 10;
-
-//
-
-
-
 
 
 
@@ -31,8 +21,8 @@ function startQuiz() {
 }
 
 function setNextQuestion() {
+    resetState()
    showQuestion(shuffleQuestions[currentQuestionIndex])
-   
 }
 
 function showQuestion(question) {
@@ -45,11 +35,18 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer)
+        answerButtonsEl.appendChild(button)
     })
 }
 
+function resetState() {
+   while (answerButtonsEl.firstChild) {
+       answerButtonsEl.removeChild(answerButtonsEl.firstChild)
+   }
+}
+
 function selectAnswer(e) {
-answerButtonsEl.appendChild(button)
+
 }
 
 const questions = [
@@ -73,34 +70,6 @@ const questions = [
 
 
 
-
-// const timeInterval = setInterval(function(){});
-// const timer = function() {
-//     timeInterval = setInterval(function() {
-//         if (timeLeft > 0) {
-//             timerEl.textContent = 'Time: ' + timeLeft;
-//             timeLeft --;
-//         }
-    
-//     else if (timeLeft <= 0){
-//         endQuiz();
-     
-
-//         timerEl.textContent = 'Time: 0';   
-//     }      
-// }, 1000);
-// };
-
-// const stopTimer = function() {
-//     clearInterval(timeInterval);
-//     timerEl.textContent = "Time: " + timeLeft;
-// };
-
-// const subtractFromTimer = function() {
-//     clearInterval(timeInterval);
-//     timeLeft = timeLeft - subtractTime;
-//     timer();
-// }
 
 
 
