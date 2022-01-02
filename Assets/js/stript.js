@@ -1,7 +1,6 @@
 const answerMsg = document.getElementById('answerMsg');
 const info_box = document.getElementById("infoBox");
 const start_btn = document.getElementById("startQuiz");
-const nextButton = document.getElementById("nextButton");
 const questionContainerEl = document.getElementById('question-container');
 const questionsEl = document.getElementById("question");
 const answerButtonsEl = document.getElementById("answer-button");
@@ -18,6 +17,7 @@ start_btn.addEventListener('click', startQuiz)
 
 function startQuiz() {
     info_box.classList.add('hide')
+    start_btn.classList.add('hide')
     shuffleQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerEl.classList.remove('hide')
@@ -45,7 +45,6 @@ function startQuiz() {
 // };
 
 
-
 function setNextQuestion() {
     resetState()
     showQuestion(shuffleQuestions[currentQuestionIndex])
@@ -53,8 +52,8 @@ function setNextQuestion() {
 
 function showQuestion(questions) {
     questionsEl.innerText = questions.question;
-    questions.answers.forEach (answer => {
-        const button = document.createElement ('button')
+    questions.answers.forEach(answer => {
+        const button = document.createElement('button')
         button.innerText = answer.text
         button.value = answer.correct
         button.addEventListener("click", checkQuestion)
@@ -64,16 +63,26 @@ function showQuestion(questions) {
 }
 
 function checkQuestion(e) {
-
     if (e.target.value == "true") {
-    answerMsg.textContent = "Correct!"
+        answerMsg.textContent = "Correct!"
     } else {
         answerMsg.textContent = "Incorrect"
-}
+    }
+    NextQuestion();
+    
 }
 
+function nextQuestion() {
+    const endOfQuizIndex = currentQuestionIndex;
+    endOfQuizIndex++
+    if (currentQuestionIndex < questions.length -1){
+        currentQuestionIndex ++ }
+        if ( endOfQuizIndex == questions.length ) {
+        } 
+    }
+
+
 function resetState() {
-    nextButton.classList.add('hide')
     while (answerButtonsEl.firstChild) {
         answerButtonsEl.removeChild(answerButtonsEl.firstChild)
     }
@@ -99,5 +108,25 @@ const questions = [{
             text: "Jan Levinson",
             correct: false
         }
+    ],
+
+    question: "What company did Michael start after he quit Dunder Mifflin?",
+    answers: [{
+            text: "Paper R Us",
+            correct: false
+        },
+        {
+            text: "Michael Scott Paper Company",
+            correct: true
+        },
+        {
+            text: "Office Depot",
+            correct: false
+        },
+        {
+            text: "Prince Family Paper Company",
+            correct: false
+        }
     ]
+
 }]
