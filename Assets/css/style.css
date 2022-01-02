@@ -75,11 +75,11 @@ a:link {
     border-radius: 5px;
 }
 
-#startQuiz {
+#startQuiz, #nextButton {
     color: #fff;
     background: linear-gradient(to right, #515ab1, #303ca7);
 }
-#startQuiz:hover {
+#startQuiz:hover, #nextButton:hover {
     background: linear-gradient(to right,#6970af, #4750a5);
 }
 
@@ -105,3 +105,8 @@ a:link {
     background: linear-gradient(to right,#6970af, #4750a5);
 }
 
+.correct, .wrong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

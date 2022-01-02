@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Office Quiz</title>
     <link rel="stylesheet" href="./Assets/css/style.css">
-   
+
 </head>
+
 <body>
     <!-- Header with high scores and timer -->
-   <header>
+    <header>
         <ul class="header">
             <li><a href="http://www.google.com">View Highscores</a></li>
-            <li id="timer"><li>
+            <li id="timer">
+            <li>
         </ul>
     </header>
 
@@ -28,26 +31,29 @@
             </div>
         </div>
         <div id="infoBox" class="hide">
-        <div class="infoTitle"><span>The Office Quiz</span></div>
-        <div class="infoList">
-            <div class="info">Corporate told Michael he needs to do a diversity training after his off color remark
-            where he insulted another employee. Not taking the training serious, he decided to
-            make a quiz to see how well each employee knows each other.</div>
-            <div class="info">Try to answer the following questions within the time limit.
-                Keep in mind that incorrect answers will penalize your score time by ten seconds!
+            <div class="infoTitle"><span>The Office Quiz</span></div>
+            <div class="infoList">
+                <div class="info">Corporate told Michael he needs to do a diversity training after his off color remark
+                    where he insulted another employee. Not taking the training serious, he decided to
+                    make a quiz to see how well each employee knows each other.</div>
+                <div class="info">Try to answer the following questions within the time limit.
+                    Keep in mind that incorrect answers will penalize your score time by ten seconds!
+                </div>
+
             </div>
-            
+            <div class="buttons">
+                <button id="startQuiz">Start Quiz</button>
+                <button id="nextButton" class="hide">Next</button>
+            </div>
         </div>
-        <div class="buttons">
-            <button id="startQuiz">Start Quiz</button>
-        </div>
+        <h2 id="correct"></h2>
+        <h2 id="wrong"></h2>
     </div>
-  </div>
 
 
     <script src="./Assets/js/stript.js"></script>
 
 
 </body>
-</html>
 
+</html>
