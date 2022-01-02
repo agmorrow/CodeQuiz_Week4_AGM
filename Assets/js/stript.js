@@ -1,12 +1,14 @@
+const answerMsg = document.getElementById('answerMsg');
 const info_box = document.getElementById("infoBox");
 const start_btn = document.getElementById("startQuiz");
+const nextButton = document.getElementById("nextButton");
 const questionContainerEl = document.getElementById('question-container');
 const questionsEl = document.getElementById("question");
 const answerButtonsEl = document.getElementById("answer-button");
 const timerEl = document.getElementById("timer");
 
-let timeLeft = 75;
-const subtractTen = 10;
+// let timeLeft = 75;
+// const subtractTen = 10;
 
 let shuffleQuestions, currentQuestionIndex
 
@@ -20,27 +22,27 @@ function startQuiz() {
     currentQuestionIndex = 0
     questionContainerEl.classList.remove('hide')
     setNextQuestion()
-    timer()
+    // timer()
 }
 
-const timeInterval = setInterval(function () {});
-let timer = function () {
-    timeInterval = setInterval(function () {
-        if (timeLeft > 0) {
-            timerEl.textContent = 'Time: ' + timeLeft;
-            timeLeft--;
-        }
+// const timeInterval = setInterval(function () {});
+// let timer = function () {
+//     timeInterval = setInterval(function () {
+//         if (timeLeft > 0) {
+//             timerEl.textContent = 'Time: ' + timeLeft;
+//             timeLeft--;
+//         }
 
-    }, 1000);
-};
+//     }, 1000);
+// };
 
 
 
-const subtractTenFromTimer = function () {
-    clearInterval(timeInterval);
-    timeLeft = timeLeft - subtractTen;
-    timer();
-};
+// const subtractTenFromTimer = function () {
+//     clearInterval(timeInterval);
+//     timeLeft = timeLeft - subtractTen;
+//     timer();
+// };
 
 
 
@@ -49,50 +51,33 @@ function setNextQuestion() {
     showQuestion(shuffleQuestions[currentQuestionIndex])
 }
 
-function showQuestion(question) {
-    questionsEl.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
+function showQuestion(questions) {
+    questionsEl.innerText = questions.question;
+    questions.answers.forEach (answer => {
+        const button = document.createElement ('button')
         button.innerText = answer.text
+        button.value = answer.correct
+        button.addEventListener("click", checkQuestion)
         button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectAnswer)
         answerButtonsEl.appendChild(button)
     })
 }
 
+function checkQuestion(e) {
+
+    if (e.target.value == "true") {
+    answerMsg.textContent = "Correct!"
+    } else {
+        answerMsg.textContent = "Incorrect"
+}
+}
+
 function resetState() {
+    nextButton.classList.add('hide')
     while (answerButtonsEl.firstChild) {
         answerButtonsEl.removeChild(answerButtonsEl.firstChild)
     }
 }
-
-function selectAnswer(e) {
-    const selectButton = e.target
-    const correct = selectButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsEl.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-}
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-        element.classList.add('correct')
-     
-    } else {
-        element.classList.add('wrong')
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
-}
-
 
 
 
