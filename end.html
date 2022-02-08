@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Congrats!</title>
-    <link rel="stylesheet" href="./Assets/css/end.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All done!</title>
+  <link rel="stylesheet" href="./Assets/css/end.css" />
 </head>
+
 <body>
-    <header>
-        <ul class="header">
-            <li><a href="./highscores.html">View Highscores</a></li>
-        </ul>
-    </header>
-    <div class="container">
-        <div id="end" class="flex-center flex-column">
-            <h2>All done!</h2>
-          <h3 id="finalScore"></h3>
-          <form>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Enter initials"
-            />
-            <button
-              type="submit"
-              class="btn"
-              id="saveScoreBtn"
-              onclick="saveHighScore(event)"
-              disabled
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-      </div>
-      <script src="./Assets/js/end.js"></script>
+  <header>
+    <ul class="header">
+      <li><a href="./highscores.html">View Highscores</a></li>
+    </ul>
+  </header>
+  <div class="container">
+    <div id="end" class="flexCenter flexColumn">
+      <h2>All done!</h2>
+      <h3 id="finalScore"></h3>
+      <form>
+        <input type="text" name="initials" id="initials" placeholder="Enter initials" />
+        <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  <script src="./Assets/js/end.js"></script>
 </body>
+
 </html>

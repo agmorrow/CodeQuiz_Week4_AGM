@@ -3,12 +3,11 @@ const info_box = document.getElementById("infoBox");
 const start_btn = document.getElementById("startQuiz");
 const questionContainerEl = document.getElementById('question-container');
 const questionsEl = document.getElementById("question");
-const answerButtonsEl = document.getElementById("answer-button");
+const answerButtonsEl = document.getElementById("answerButton");
 let score = 0;
 const timerEl = document.getElementById("timer");
 
 let secondsLeft = 60;
-
 
 let shuffleQuestions, currentQuestionIndex
 
@@ -51,7 +50,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: 'In the episode "Back From Vacation," Michael returns to the office from a trip to Jamaica with:',
@@ -68,11 +66,10 @@ const questions = [{
         correct: false
       },
       {
-        text: "none of the above",
+        text: "None of the above",
         correct: false
       }
     ]
-
   },
   {
     question: "Whose birthday does the office celebrate when there are rumors that the company is downsizing?",
@@ -93,10 +90,9 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
-    question: "Who did Michael run over with his car",
+    question: "Who did Michael run over with his car?",
     answers: [{
         text: "Kelly",
         correct: false
@@ -114,7 +110,6 @@ const questions = [{
         correct: true
       }
     ]
-
   },
   {
     question: "Who beats Michael's pushup challenge by doing 26 pushups at the office?",
@@ -135,7 +130,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: "In Season 1, what type of training workshop does Michael lead?",
@@ -156,7 +150,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: "What new purchase is Michael excited to show off at his dinner party?",
@@ -177,7 +170,6 @@ const questions = [{
         correct: true
       }
     ]
-
   },
   {
     question: "What is Gabe's middle name?",
@@ -198,7 +190,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: "What is the name of Toby's True Crime Podcast?",
@@ -219,7 +210,6 @@ const questions = [{
         correct: true
       }
     ]
-
   },
   {
     question: "What is Ben Franklin's real name?",
@@ -240,7 +230,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: "What is the trick to Kevin's chili?",
@@ -261,7 +250,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: "How many bottles of vodka does Michael buy for the Christmas party?",
@@ -282,7 +270,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: "What does Michael buy Ryan for secrete santa?",
@@ -303,7 +290,6 @@ const questions = [{
         correct: false
       }
     ]
-
   },
   {
     question: "What does Michael have written on his forehead during the diversity day training?",
@@ -324,45 +310,44 @@ const questions = [{
         correct: false
       }
     ]
-
   }
 ];
-
+// Set timer function
 function setTime() {
-  const timerInterval = setInterval(function() {
+  const timerInterval = setInterval(function () {
     secondsLeft--;
     timerEl.textContent = "Timer: " + secondsLeft;
-
-    if(secondsLeft <= 0) {
-      clearInterval(timerInterval);
+    // If seconds left goes to zero or below zero, end game and collect score
+    if (secondsLeft <= 0) {
+      localStorage.setItem('mostRecentScore', score);
+      return window.location.assign('./end.html');
     }
   }, 1000);
 }
-
-info_box.classList.remove('hide')
+// Show directions when the page loads
+info_box.classList.remove('hide');
+// When the start button is clicked, set the timer and start quiz
 start_btn.addEventListener('click', () => {
   score = 0;
   setTime();
   startQuiz();
 });
-
+// Hide directions and start quiz
 function startQuiz() {
   info_box.classList.add('hide')
   start_btn.classList.add('hide')
-  console.log(questions);
+  // Shuffle through random questions
   shuffleQuestions = questions.sort(() => Math.random() - .5)
-  console.log(shuffleQuestions);
   currentQuestionIndex = 0
   questionContainerEl.classList.remove('hide')
   setNextQuestion()
-
 }
-
+// Set the next question
 function setNextQuestion() {
-    resetState()
+  resetState()
   showQuestion(shuffleQuestions[currentQuestionIndex])
 }
-
+// Show the next question
 function showQuestion(questions) {
   questionsEl.innerText = questions.question;
   questions.answers.forEach(answer => {
@@ -373,48 +358,44 @@ function showQuestion(questions) {
     button.classList.add('btn')
     answerButtonsEl.appendChild(button)
   })
-  
-}
+};
 
-const CORRECT_BONUS = 5;
-
+const points = 5;
+// If the correct answer is selected, add points and display "Correct!"
 function checkQuestion(e) {
-  console.log(e);
   if (e.target.value == "true") {
     answerMsg.textContent = "Correct!"
-    incrementScore(CORRECT_BONUS);
+    incrementScore(points);
+    // If the wrong answer is selected, display "Wrong! and deduct 10 seconds"
   } else {
     answerMsg.textContent = "Wrong!"
     secondsLeft -= 10;
   }
-  
-  setTimeout(function() {
+  // Set timeout function
+  setTimeout(function () {
     answerMsg.textContent = ""
     nextQuestion();
     setNextQuestion();
   }, 1000)
 }
-
+// Increment score function
 incrementScore = (num) => {
   score += num;
-  console.log(score);
 };
-
+// Go to next question and save score to local storage
 function nextQuestion() {
   if (currentQuestionIndex < questions.length - 1) {
-    currentQuestionIndex++ 
+    currentQuestionIndex++
     if (currentQuestionIndex === 10) {
       localStorage.setItem('mostRecentScore', score);
-      return window.location.assign('./end.html'); 
+      return window.location.assign('./end.html');
     }
-    
-    console.log(currentQuestionIndex);
-}
-}
 
-
+  }
+};
+// Reset the questions after answered
 function resetState() {
   while (answerButtonsEl.firstChild) {
     answerButtonsEl.removeChild(answerButtonsEl.firstChild)
   }
-}
+};

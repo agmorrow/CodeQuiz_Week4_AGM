@@ -2,57 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Office Quiz</title>
-    <link rel="stylesheet" href="./Assets/css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Office Quiz</title>
+  <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 
 <body>
-    <!-- Header with high scores and timer -->
-    <header>
-        <ul class="header">
-            <li><a href="./highscores.html">View Highscores</a></li>
-            <li id="timer">
-            <li>
-        </ul>
-    </header>
-
-    <!-- Info Box -->
-    <div class="container">
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-button" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
-        </div>
-        <div id="infoBox" class="hide">
-            <div class="infoTitle"><span>The Office Quiz</span></div>
-            <div class="infoList">
-                <div class="info">Corporate told Michael he needs to do a diversity training after his off color remark
-                    where he insulted another employee. Not taking the training serious, he decided to
-                    make a quiz to see how well each employee knows each other.</div>
-                <div class="info">Try to answer the following questions within the time limit.
-                    Keep in mind that incorrect answers will penalize your score time by ten seconds!
-                </div>
-
-            </div>
-            <div class="buttons">
-                <a id="startQuiz" class='startBtn'>Start Quiz</a>
-            </div>
-        </div>
-        
-        <div id="answerMsg"></div>
+  <!-- Header with high scores and timer -->
+  <header>
+    <ul class="header">
+      <li><a href="./highscores.html">View Highscores</a></li>
+      <li id="timer">
+      <li>
+    </ul>
+  </header>
+  <!-- Info Box -->
+  <div class="container">
+    <div id="question-container" class="hide">
+      <div id="question">Question</div>
+      <div id="answerButton" class="btnColumn">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
     </div>
-
-
-    <script src="./Assets/js/stript.js"></script>
-
-
+    <div id="infoBox" class="hide">
+      <div class="infoTitle"><span>The Office Quiz</span></div>
+      <div class="infoList">
+        <div class="info">Corporate told Michael he needs to do a diversity training after his off color remark
+          where he insulted another employee. Not taking the training serious, he decided to
+          make a quiz to see how well each employee knows each other.</div>
+        <div class="info">Try to answer the following questions within the time limit.
+          Keep in mind that incorrect answers will penalize your score time by ten seconds!
+        </div>
+      </div>
+      <div class="buttons">
+        <a id="startQuiz" class='startBtn'>Start Quiz</a>
+      </div>
+    </div>
+    <div id="answerMsg"></div>
+  </div>
+  <script src="./Assets/js/stript.js"></script>
 </body>
 
 </html>
