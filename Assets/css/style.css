@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -60,26 +60,25 @@ a:link {
 }
 
 
-.buttons {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-#startQuiz {
+.startBtn {
+    font-family: Arial, Helvetica, sans-serif;
     height: 50px;
     width: 100px;
     margin: 0 30px 10px 0;
-    border-radius: 5px;
-}
-
-#startQuiz {
     color: #fff;
     background: linear-gradient(to right, #515ab1, #303ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#startQuiz:hover {
+.startBtn:hover {
     background: linear-gradient(to right,#6970af, #4750a5);
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .hide {

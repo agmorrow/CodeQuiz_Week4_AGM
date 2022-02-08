@@ -1,0 +1,141 @@
+:root {
+    background-color: #ffff;
+    font-size: 62.5%;
+  }
+  
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 5.4rem;
+    color: #56a5eb;
+    margin-bottom: 5rem;
+  }
+  
+  h1 > span {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+  
+  h2 {
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 2.8rem;
+    font-weight: 500;
+  }
+  
+  /* UTILITIES */
+  
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .header {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.header a {
+    float: left;
+    font-size: 16px;
+}
+
+
+a:link { 
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+
+  /* BUTTONS */
+  .btn {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(to right, #515ab1, #303ca7);
+
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+    background: linear-gradient(to right,#6970af, #4750a5);
+  }
+  
+  .btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
+  #btnBottom {
+      margin-bottom: 3rem;
+  }
+  
+  /* FORMS */
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    margin: 3rem;
+    font-size: 1.8rem;
+    border: solid 1px black;
+  }
+  
+  input::placeholder {
+    color: #aaa;
+  }
